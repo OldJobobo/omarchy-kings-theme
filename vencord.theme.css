@@ -1,0 +1,582 @@
+/*                                                                        */
+/*      *****                                                             */
+/*   ******                  *                                            */
+/*  **   *  *    **         ***                                           */
+/* *    *  *   **** *        *                                            */
+/*     *  *     ****                                             ****     */
+/*    ** **    * **        ***     ***  ****        ****        * **** *  */
+/*    ** **   *             ***     **** **** *    *  ***  *   **  ****   */
+/*    ** *****               **      **   ****    *    ****   ****        */
+/*    ** ** ***              **      **    **    **     **      ***       */
+/*    ** **   ***            **      **    **    **     **        ***     */
+/*    *  **    ***           **      **    **    **     **          ***   */
+/*       *       ***         **      **    **    **     **     ****  **   */
+/*   ****         ***        **      **    **    **     **    * **** *    */
+/*  *  *****        ***  *   *** *   ***   ***    ********       ****     */
+/* *    ***           ***     ***     ***   ***     *** ***               */
+/* *                                                     ***              */
+/*  **                                             ****   ***             */
+/*                                               *******  **              */
+/*                                              *     ****                */
+/*                                                                        */
+
+/**
+ * @name Omarchy Kings Midnight
+ * @author oldjobobo
+ * @version 0.2.0
+ * @description Midnight base with Kings palette, square geometry, and hard-edged court styling.
+ * @source https://github.com/oldjobobo/omarchy-kings-theme
+ */
+
+@import url("https://refact0r.github.io/midnight-discord/build/midnight.css");
+
+:root {
+    --colors: on;
+
+    /* Kings palette */
+    --kings-bg-0: #261e12;
+    --kings-bg-1: #312617;
+    --kings-bg-2: #3b2e1b;
+    --kings-bg-3: #564a38;
+    --kings-fg-0: #f3e6bf;
+    --kings-fg-1: #d9c27a;
+    --kings-fg-2: #b89e5f;
+    --kings-accent: #c8a03c;
+    --kings-accent-bright: #efcf72;
+    --kings-red: #a33d4e;
+    --kings-teal: #2f7f88;
+    --kings-green: #5d7d3a;
+    --kings-purple: #7550a3;
+    --kings-blue: #2e6fb8;
+    --kings-border: rgba(217, 194, 122, 0.18);
+    --kings-border-strong: rgba(239, 207, 114, 0.34);
+    --kings-shadow: rgba(7, 4, 1, 0.52);
+    --kings-overlay: rgba(14, 10, 5, 0.72);
+    --kings-overlay-soft: rgba(32, 23, 11, 0.68);
+
+    /* Midnight config */
+    --font: "IBM Plex Sans";
+    --code-font: "";
+    font-weight: 400;
+    --gap: 12px;
+    --divider-thickness: 4px;
+    --corner-text: "Kings";
+    --corner-display: none;
+    --animations: on;
+    --list-item-transition: 120ms ease;
+    --dms-icon-svg-transition: 0.4s ease;
+    --border-hover-transition: 0.2s ease;
+    --unread-bar-transition: 120ms ease;
+    --border-thickness: 1px;
+    --top-bar-height: var(--gap);
+    --top-bar-button-position: titlebar;
+    --top-bar-title-position: off;
+    --subtle-top-bar-title: off;
+    --custom-window-controls: on;
+    --window-control-size: 14px;
+    --custom-dms-icon: custom;
+    --dms-icon-svg-url: url("https://refact0r.github.io/midnight-discord/assets/Font_Awesome_5_solid_moon.svg");
+    --dms-icon-svg-size: 90%;
+    --dms-icon-color-before: var(--text-4);
+    --dms-icon-color-after: var(--text-1);
+    --custom-dms-background: color;
+    --dms-background-image-url: url("");
+    --dms-background-image-size: cover;
+    --dms-background-color: linear-gradient(180deg, #3b2e1b, #261e12);
+    --background-image: off;
+    --background-image-url: url("");
+    --transparency-tweaks: off;
+    --remove-bg-layer: off;
+    --panel-blur: off;
+    --blur-amount: 12px;
+    --bg-floating: var(--bg-3);
+    --custom-chatbar: off;
+    --chatbar-height: 47px;
+    --small-user-panel: on;
+
+    /* Midnight native color system */
+    --text-0: #241b10;
+    --text-1: var(--kings-fg-0);
+    --text-2: var(--kings-fg-1);
+    --text-3: color-mix(in srgb, var(--kings-fg-1) 78%, black);
+    --text-4: color-mix(in srgb, var(--kings-fg-1) 52%, black);
+    --text-5: color-mix(in srgb, var(--kings-fg-1) 28%, black);
+    --bg-1: #49371e;
+    --bg-2: #3b2e1b;
+    --bg-3: #312617;
+    --bg-4: #261e12;
+    --hover: rgba(200, 160, 60, 0.1);
+    --active: rgba(200, 160, 60, 0.18);
+    --active-2: rgba(200, 160, 60, 0.28);
+    --message-hover: rgba(243, 230, 191, 0.045);
+
+    --accent-1: var(--kings-accent-bright);
+    --accent-2: var(--kings-accent);
+    --accent-3: #a6822c;
+    --accent-4: #8b6b22;
+    --accent-5: #71541a;
+    --accent-new: var(--kings-red);
+    --mention: linear-gradient(to right, rgba(200, 160, 60, 0.14) 40%, transparent);
+    --mention-hover: linear-gradient(to right, rgba(200, 160, 60, 0.2) 40%, transparent);
+    --reply: linear-gradient(to right, rgba(217, 194, 122, 0.1) 40%, transparent);
+    --reply-hover: linear-gradient(to right, rgba(217, 194, 122, 0.14) 40%, transparent);
+
+    --online: #8eb866;
+    --dnd: #cf6f7e;
+    --idle: #efcf72;
+    --streaming: #a37dcb;
+    --offline: var(--text-4);
+
+    --border-light: rgba(217, 194, 122, 0.1);
+    --border: rgba(217, 194, 122, 0.18);
+    --border-hover: rgba(239, 207, 114, 0.3);
+    --button-border: rgba(255, 243, 200, 0.12);
+
+    --red-1: #cf6f7e;
+    --red-2: #c45e6f;
+    --red-3: #b44c5d;
+    --red-4: #a33d4e;
+    --red-5: #8d3040;
+    --green-1: #8eb866;
+    --green-2: #7eaa57;
+    --green-3: #6f994b;
+    --green-4: #5d7d3a;
+    --green-5: #4e6831;
+    --blue-1: #79abd6;
+    --blue-2: #6798c5;
+    --blue-3: #5485b3;
+    --blue-4: #3f75a1;
+    --blue-5: #2e6fb8;
+    --yellow-1: #f3da90;
+    --yellow-2: #efcf72;
+    --yellow-3: #ddb957;
+    --yellow-4: #c8a03c;
+    --yellow-5: #a6822c;
+    --purple-1: #b291da;
+    --purple-2: #a37dcb;
+    --purple-3: #9068bd;
+    --purple-4: #7f59ad;
+    --purple-5: #7550a3;
+
+    /* Discord tokens */
+    --background-primary: var(--bg-4);
+    --background-secondary: var(--bg-3);
+    --background-secondary-alt: var(--bg-2);
+    --background-tertiary: #1c160d;
+    --background-accent: var(--kings-bg-3);
+    --background-floating: #21180e;
+    --background-base-low: var(--kings-bg-1);
+    --background-base-lower: var(--kings-bg-0);
+    --background-base-lowest: #191209;
+    --bg-base-primary: var(--kings-bg-0);
+    --bg-base-secondary: var(--kings-bg-1);
+    --bg-base-tertiary: var(--kings-bg-2);
+    --bg-surface-overlay: #21180e;
+    --bg-surface-raised: #2a1f12;
+    --bg-overlay-1: rgba(22, 16, 9, 0.9);
+    --bg-overlay-2: rgba(18, 13, 7, 0.94);
+    --bg-overlay-3: rgba(14, 10, 5, 0.97);
+    --background-mentioned: rgba(200, 160, 60, 0.12);
+    --background-mentioned-hover: rgba(200, 160, 60, 0.18);
+    --background-message-hover: rgba(243, 230, 191, 0.04);
+    --background-modifier-hover: rgba(243, 230, 191, 0.06);
+    --background-modifier-active: rgba(243, 230, 191, 0.1);
+    --background-modifier-selected: rgba(200, 160, 60, 0.16);
+    --background-modifier-accent: rgba(243, 230, 191, 0.1);
+    --channeltextarea-background: #1f170d;
+    --chat-background: var(--kings-bg-0);
+    --home-background: var(--kings-bg-0);
+    --modal-background: #22190f;
+    --modal-footer-background: #1d150c;
+    --scrollbar-auto-thumb: #4b3d2a;
+    --scrollbar-auto-track: transparent;
+
+    --text-normal: var(--text-1);
+    --text-muted: var(--text-3);
+    --text-link: var(--accent-1);
+    --header-primary: var(--text-1);
+    --header-secondary: var(--text-2);
+    --interactive-normal: var(--text-2);
+    --interactive-hover: #fff3c8;
+    --interactive-active: var(--text-1);
+    --interactive-muted: var(--text-4);
+
+    --brand-500: var(--accent-2);
+    --brand-560: var(--accent-1);
+    --brand-600: var(--accent-3);
+    --button-secondary-background: #3a2c18;
+    --button-secondary-background-hover: #49371e;
+    --button-danger-background: var(--kings-red);
+    --button-danger-background-hover: #b9495b;
+    --info-warning-foreground: var(--kings-accent-bright);
+    --info-positive-foreground: #8eb866;
+    --info-danger-foreground: #cf6f7e;
+
+    --border-subtle: var(--kings-border);
+    --input-background: #1d150c;
+    --profile-body-background-color: #1f170d;
+    --profile-gradient-primary-color: #1f170d;
+    --profile-gradient-secondary-color: #2a1f12;
+    --card-primary-bg: #21180e;
+    --card-secondary-bg: #1c150c;
+    --activity-card-background: #1e170d;
+    --primary-600: var(--kings-bg-0);
+    --primary-630: var(--kings-bg-1);
+    --primary-660: var(--kings-bg-1);
+    --primary-700: var(--kings-bg-2);
+    --primary-800: #21180e;
+    --primary-860: #191209;
+    --primary-900: #140e08;
+
+    --radius-xs: 0px;
+    --radius-sm: 0px;
+    --radius-md: 0px;
+    --radius-lg: 0px;
+    --radius-xl: 0px;
+    --radius-xxl: 0px;
+}
+
+.theme-dark {
+    --background-primary: var(--kings-bg-0);
+    --background-secondary: var(--kings-bg-1);
+    --background-secondary-alt: var(--kings-bg-2);
+    --background-tertiary: #1c160d;
+    --background-floating: #21180e;
+    --modal-background: #22190f;
+    --modal-footer-background: #1d150c;
+}
+
+/* Kill Midnight's neutral fallback surfaces */
+:is(
+    .theme-dark,
+    .app_de4237,
+    .bg__960e4,
+    .layer__960e4,
+    .baseLayer__960e4,
+    .standardSidebarView__23e6b,
+    .contentRegion__23e6b,
+    .contentRegionScroller__23e6b,
+    .sidebarRegionScroller__23e6b,
+    .chatContent_f75fb0,
+    .container__133bf,
+    .container__9293f,
+    .container__01ae2,
+    .content__908e2,
+    .page_c48ade,
+    .applicationStore_f07d62,
+    .shop__08415,
+    .scrollerBase__99f8c
+) {
+    background-color: var(--kings-bg-0) !important;
+}
+
+:is(
+    [class*="container"][class*="themed"],
+    [class*="contentRegion"],
+    [class*="sidebarRegion"],
+    [class*="page"],
+    [class*="chatContent"],
+    [class*="nowPlayingColumn"],
+    [class*="membersWrap"],
+    [class*="applicationStore"],
+    [class*="shop"],
+    [class*="scrollerBase"]
+) {
+    background-color: var(--kings-bg-0) !important;
+}
+
+/* Major geometry and material pass */
+:is(
+    .appMount__51fd7,
+    .bg__960e4,
+    .baseLayer__960e4,
+    .container__133bf,
+    .sidebarList_c48ade,
+    .chat_f75fb0,
+    .contentRegion__23e6b,
+    .membersWrap_c8ffbb,
+    .container__9293f,
+    .panels_c48ade,
+    .wrapper_ef3116,
+    .scroller__36d07,
+    .content__908e2,
+    .container__01ae2,
+    .privateChannels__35e86
+) {
+    border-radius: 0 !important;
+}
+
+:is(
+    .sidebar_c48ade,
+    .container__2637a,
+    .membersWrap_c8ffbb,
+    .panels_c48ade,
+    .chat_f75fb0,
+    .container__133bf,
+    .nowPlayingColumn__133bf,
+    .shop__6db1d,
+    .container_f369db
+) {
+    background:
+        linear-gradient(180deg, rgba(239, 207, 114, 0.03), transparent 18%),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)),
+        var(--background-primary) !important;
+    box-shadow: inset 0 0 0 1px var(--kings-border);
+}
+
+/* Sidebars and lists */
+.sidebar_c48ade,
+.privateChannels__35e86,
+.container__2637a,
+.panels_c48ade {
+    border-right: 1px solid var(--kings-border);
+}
+
+.panels_c48ade {
+    background: linear-gradient(180deg, rgba(239, 207, 114, 0.06), transparent), #1d150c !important;
+    border-top: 1px solid var(--kings-border);
+}
+
+.link__2ea32,
+.interactive_bf202d,
+.channel__972a0,
+.layout__20a53,
+.container__91a9d {
+    border-radius: 0 !important;
+}
+
+.modeSelected__2ea32 .link__2ea32,
+.channel__972a0:hover .link__2ea32,
+.interactive_bf202d:hover,
+.layout__20a53:hover {
+    background: linear-gradient(90deg, rgba(200, 160, 60, 0.22), rgba(200, 160, 60, 0.05)) !important;
+    box-shadow: inset 2px 0 0 0 var(--kings-accent);
+}
+
+.modeSelected__2ea32 .name__2ea32,
+.modeSelected__2ea32 .icon__2ea32,
+.selected__91a9d .layout__20a53 {
+    color: var(--kings-fg-0) !important;
+}
+
+/* Chat and message surfaces */
+.form_f75fb0,
+.channelTextArea_f75fb0,
+.scrollableContainer__74017,
+.attachment_b52bef,
+.embedFull__623de,
+.message__5126c,
+.wrapper_f7ecac {
+    border-radius: 0 !important;
+}
+
+.scrollableContainer__74017 {
+    background: linear-gradient(180deg, rgba(239, 207, 114, 0.04), transparent), #1d150c !important;
+    box-shadow: inset 0 0 0 1px var(--kings-border-strong);
+}
+
+.message__5126c {
+    border-left: 1px solid transparent;
+}
+
+.message__5126c:hover {
+    background: linear-gradient(90deg, rgba(243, 230, 191, 0.025), transparent) !important;
+    border-left-color: var(--kings-border);
+}
+
+.mentioned__5126c {
+    background: linear-gradient(90deg, rgba(200, 160, 60, 0.2), rgba(200, 160, 60, 0.04)) !important;
+    border-left-color: var(--kings-accent) !important;
+}
+
+.separator__5126c {
+    opacity: 0.5;
+}
+
+/* Buttons, pills, inputs */
+button,
+.button__201d5,
+.lookFilled__201d5,
+.lookOutlined__201d5,
+.item__58105,
+.tabBarItem_b9fccc,
+.newMessagesBar__0f481,
+.barButtonAlt__0f481,
+.pill_a2c9e8,
+.wrapper__1405b,
+.input__0f084,
+.input_f8bc55 {
+    border-radius: 0 !important;
+}
+
+.lookFilled__201d5.colorBrand__201d5,
+.button__201d5[color="brand"] {
+    background: linear-gradient(180deg, var(--kings-accent-bright), var(--kings-accent)) !important;
+    color: #241b10 !important;
+    border: 1px solid rgba(255, 243, 200, 0.22);
+}
+
+.lookFilled__201d5.colorBrand__201d5:hover,
+.button__201d5[color="brand"]:hover {
+    filter: brightness(1.05);
+}
+
+.lookOutlined__201d5,
+.input__0f084,
+.input_f8bc55,
+.searchBar__35e86 {
+    background: #1b140b !important;
+    border: 1px solid var(--kings-border) !important;
+}
+
+.item__58105[aria-selected="true"],
+.tabBarItem_b9fccc[aria-selected="true"] {
+    background: linear-gradient(180deg, rgba(200, 160, 60, 0.24), rgba(200, 160, 60, 0.1)) !important;
+    color: var(--kings-fg-0) !important;
+    box-shadow: inset 0 -1px 0 var(--kings-accent);
+}
+
+/* Popouts, modals, menus */
+.menu_c1e9c4,
+.wrapper__3af0b,
+.root__49fc1,
+.footer__49fc1,
+.small_f9d27c,
+.medium__9a337,
+.large__9a337,
+.container__0f2e8,
+.messagesPopoutWrap__45690,
+.userProfileOuterUnthemed_c69a7b,
+.browser_fc4f04 {
+    border-radius: 0 !important;
+}
+
+.menu_c1e9c4,
+.root__49fc1,
+.container__0f2e8,
+.messagesPopoutWrap__45690,
+.userProfileOuterUnthemed_c69a7b {
+    background:
+        linear-gradient(180deg, rgba(239, 207, 114, 0.05), transparent 20%),
+        var(--kings-overlay) !important;
+    border: 1px solid var(--kings-border-strong);
+    box-shadow: 0 18px 40px var(--kings-shadow);
+}
+
+:is(
+    [class*="cardPrimary"],
+    [class*="cardSecondary"],
+    [class*="settingCard"],
+    [class*="accountProfileCard"],
+    [class*="profileCard"],
+    [class*="popout"],
+    [class*="modal"],
+    [class*="innerContainer"],
+    [class*="resultsGroup"],
+    [class*="optionContainer"],
+    [class*="uploadModal"],
+    [class*="emptyCard"],
+    [class*="prompt"]
+) {
+    background-color: transparent;
+}
+
+:is(
+    [class*="cardPrimary"],
+    [class*="cardSecondary"],
+    [class*="settingCard"],
+    [class*="accountProfileCard"],
+    [class*="profileCard"],
+    [class*="resultsGroup"],
+    [class*="optionContainer"],
+    [class*="emptyCard"],
+    [class*="prompt"]
+) {
+    background: linear-gradient(180deg, rgba(239, 207, 114, 0.04), transparent 22%), #21180e !important;
+    border: 1px solid var(--kings-border) !important;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+:is(
+    [class*="popout"],
+    [class*="modal"],
+    [class*="uploadModal"],
+    [class*="layerContainer"] > div
+) {
+    background:
+        linear-gradient(180deg, rgba(239, 207, 114, 0.05), transparent 20%),
+        var(--kings-overlay) !important;
+    border: 1px solid var(--kings-border-strong);
+}
+
+.footer__49fc1,
+.menu_c1e9c4::before {
+    background: transparent !important;
+}
+
+/* Member list and profile accents */
+.membersGroup_c8ffbb,
+.memberInner__5d473,
+.container__91a9d {
+    border-radius: 0 !important;
+}
+
+.membersGroup_c8ffbb {
+    color: var(--kings-accent-bright) !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.container__91a9d:hover,
+.selected__91a9d {
+    background: linear-gradient(90deg, rgba(117, 80, 163, 0.14), rgba(200, 160, 60, 0.05)) !important;
+    box-shadow: inset 2px 0 0 var(--kings-purple);
+}
+
+/* Server rail cleanup */
+.wrapper__6e9f8,
+.svg_cc5dd2,
+.childWrapper__6e9f8,
+.circleIconButton__5bc7e {
+    border-radius: 0 !important;
+}
+
+.selected__91816 .childWrapper__6e9f8,
+.wrapper__6e9f8:hover .childWrapper__6e9f8,
+.circleIconButton__5bc7e:hover {
+    background: linear-gradient(180deg, rgba(200, 160, 60, 0.26), rgba(200, 160, 60, 0.08)) !important;
+    color: var(--kings-fg-0) !important;
+}
+
+/* Small coherence tweaks */
+.divider__46c3b,
+.sectionDivider__35e86,
+.container__4a84a {
+    border-color: var(--kings-border) !important;
+}
+
+.iconWrapper__9293f,
+.titleWrapper__9293f,
+.children__9293f:after {
+    background: transparent !important;
+}
+
+.theme-dark .spoilerMarkdownContent_a3d0f7 {
+    background: rgba(86, 74, 56, 0.92);
+}
+
+.theme-dark .spoilerMarkdownContent_a3d0f7.hidden_a3d0f7:hover {
+    background: rgba(117, 80, 163, 0.92);
+}
+
+/*               .;                           */
+/*    .;;.    .-.;'     .'                    */
+/*   ;;  `;`-' .;  .-..'                      */
+/*  ;;    :.  ::  :   ;                       */
+/* ;;     ;'_;;_.-`:::'`.                     */
+/* `;.__.'  .;;;        .           .         */
+/*           .;'      .'          .'          */
+/*          .;'.-.   ;-.   .-.   ;-.   .-.    */
+/* .-.     .;';   ;';   ; ;   ;';   ; ;   ;'  */
+/* `.     .;  `;;'.'`::'`-`;;'.'`::'`-`;;'    */
+/*   `;;;;;;'                                 */

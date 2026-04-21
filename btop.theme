@@ -1,0 +1,104 @@
+#                                                                       
+#      *****                                                            
+#   ******                  *                                           
+#  **   *  *    **         ***                                          
+# *    *  *   **** *        *                                           
+#     *  *     ****                                             ****    
+#    ** **    * **        ***     ***  ****        ****        * **** * 
+#    ** **   *             ***     **** **** *    *  ***  *   **  ****  
+#    ** *****               **      **   ****    *    ****   ****       
+#    ** ** ***              **      **    **    **     **      ***      
+#    ** **   ***            **      **    **    **     **        ***    
+#    *  **    ***           **      **    **    **     **          ***  
+#       *       ***         **      **    **    **     **     ****  **  
+#   ****         ***        **      **    **    **     **    * **** *   
+#  *  *****        ***  *   *** *   ***   ***    ********       ****    
+# *    ***           ***     ***     ***   ***     *** ***              
+# *                                                     ***             
+#  **                                             ****   ***            
+#                                               *******  **             
+#                                              *     ****               
+#                                                                       
+
+# Main background, empty for terminal default, need to be empty if you want transparent background
+theme[main_bg]="#261e12"
+
+# Main text color
+theme[main_fg]="#d9c27a"
+
+# Title color for boxes
+theme[title]="#c8a03c"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#79abd6"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#564a38"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#d9c27a"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#564a38"
+
+# Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+theme[proc_misc]="#7550a3"
+
+# Box outline and divider line color
+theme[cpu_box]="#2f7f88"
+theme[mem_box]="#7550a3"
+theme[net_box]="#2e6fb8"
+theme[proc_box]="#5d7d3a"
+theme[div_line]="#564a38"
+
+# Gradient for all meters and graphs
+theme[temp_start]="#a33d4e"
+theme[temp_mid]="#c8a03c"
+theme[temp_end]="#efcf72"
+
+
+theme[cpu_start]="#7550a3"
+theme[cpu_mid]="#c8a03c"
+theme[cpu_end]="#56b8a6"
+
+
+theme[free_start]="#2e6fb8"
+theme[free_mid]="#c8a03c"
+theme[free_end]="#efcf72"
+
+
+theme[cached_start]="#c8a03c"
+theme[cached_mid]="#c8a03c"
+theme[cached_end]="#c8a03c"
+
+
+theme[available_start]="#2f7f88"
+theme[available_mid]="#2f7f88"
+theme[available_end]="#2f7f88"
+
+
+theme[used_start]="#5d7d3a"
+theme[used_mid]="#5d7d3a"
+theme[used_end]="#5d7d3a"
+
+
+theme[download_start]="#efcf72"
+theme[download_mid]="#56b8a6"
+theme[download_end]="#2e6fb8"
+
+
+theme[upload_start]="#c8a03c"
+theme[upload_mid]="#7550a3"
+theme[upload_end]="#a33d4e"
+
+#               .;                          
+#    .;;.    .-.;'     .'                   
+#   ;;  `;`-' .;  .-..'                     
+#  ;;    :.  ::  :   ;                      
+# ;;     ;'_;;_.-`:::'`.                    
+# `;.__.'  .;;;        .           .        
+#           .;'      .'          .'         
+#          .;'.-.   ;-.   .-.   ;-.   .-.   
+# .-.     .;';   ;';   ; ;   ;';   ; ;   ;' 
+# `.     .;  `;;'.'`::'`-`;;'.'`::'`-`;;'   
+#   `;;;;;;'                                
