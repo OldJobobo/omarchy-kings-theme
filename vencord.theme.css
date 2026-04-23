@@ -28,6 +28,7 @@
  * @source https://github.com/oldjobobo/omarchy-kings-theme
  */
 
+/* Intentionally tracks Midnight upstream at runtime instead of vendoring a local snapshot. */
 @import url("https://refact0r.github.io/midnight-discord/build/midnight.css");
 
 :root {
@@ -74,8 +75,6 @@
     --subtle-top-bar-title: off;
     --custom-window-controls: on;
     --window-control-size: 14px;
-    --custom-dms-icon: custom;
-    --dms-icon-svg-url: url("https://refact0r.github.io/midnight-discord/assets/Font_Awesome_5_solid_moon.svg");
     --dms-icon-svg-size: 90%;
     --dms-icon-color-before: var(--text-4);
     --dms-icon-color-after: var(--text-1);
@@ -164,15 +163,15 @@
     --background-secondary-alt: var(--bg-2);
     --background-tertiary: #1c160d;
     --background-accent: var(--kings-bg-3);
-    --background-floating: #21180e;
+    --background-floating: var(--kings-bg-1);
     --background-base-low: var(--kings-bg-1);
     --background-base-lower: var(--kings-bg-0);
     --background-base-lowest: #191209;
     --bg-base-primary: var(--kings-bg-0);
     --bg-base-secondary: var(--kings-bg-1);
     --bg-base-tertiary: var(--kings-bg-2);
-    --bg-surface-overlay: #21180e;
-    --bg-surface-raised: #2a1f12;
+    --bg-surface-overlay: var(--kings-bg-1);
+    --bg-surface-raised: var(--kings-bg-1);
     --bg-overlay-1: rgba(22, 16, 9, 0.9);
     --bg-overlay-2: rgba(18, 13, 7, 0.94);
     --bg-overlay-3: rgba(14, 10, 5, 0.97);
@@ -183,17 +182,20 @@
     --background-modifier-active: rgba(243, 230, 191, 0.1);
     --background-modifier-selected: rgba(200, 160, 60, 0.16);
     --background-modifier-accent: rgba(243, 230, 191, 0.1);
-    --channeltextarea-background: #1f170d;
+    --channeltextarea-background: var(--kings-bg-1);
     --chat-background: var(--kings-bg-0);
     --home-background: var(--kings-bg-0);
-    --modal-background: #22190f;
-    --modal-footer-background: #1d150c;
+    --modal-background: var(--kings-bg-1);
+    --modal-footer-background: var(--kings-bg-1);
     --scrollbar-auto-thumb: #4b3d2a;
     --scrollbar-auto-track: transparent;
 
     --text-normal: var(--text-1);
     --text-muted: var(--text-3);
     --text-link: var(--accent-1);
+    --channels-default: color-mix(in srgb, var(--kings-blue) 68%, var(--kings-fg-2) 32%) !important;
+    --channels-default-muted: color-mix(in srgb, var(--channels-default) 54%, transparent) !important;
+    --channels-default-unread: var(--kings-accent-bright) !important;
     --header-primary: var(--text-1);
     --header-secondary: var(--text-2);
     --interactive-normal: var(--text-2);
@@ -213,13 +215,13 @@
     --info-danger-foreground: #cf6f7e;
 
     --border-subtle: var(--kings-border);
-    --input-background: #1d150c;
-    --profile-body-background-color: #1f170d;
-    --profile-gradient-primary-color: #1f170d;
-    --profile-gradient-secondary-color: #2a1f12;
-    --card-primary-bg: #21180e;
-    --card-secondary-bg: #1c150c;
-    --activity-card-background: #1e170d;
+    --input-background: var(--kings-bg-1);
+    --profile-body-background-color: var(--kings-bg-1);
+    --profile-gradient-primary-color: var(--kings-bg-1);
+    --profile-gradient-secondary-color: var(--kings-bg-2);
+    --card-primary-bg: var(--kings-bg-1);
+    --card-secondary-bg: var(--kings-bg-1);
+    --activity-card-background: var(--kings-bg-1);
     --primary-600: var(--kings-bg-0);
     --primary-630: var(--kings-bg-1);
     --primary-660: var(--kings-bg-1);
@@ -241,9 +243,9 @@
     --background-secondary: var(--kings-bg-1);
     --background-secondary-alt: var(--kings-bg-2);
     --background-tertiary: #1c160d;
-    --background-floating: #21180e;
-    --modal-background: #22190f;
-    --modal-footer-background: #1d150c;
+    --background-floating: var(--kings-bg-1);
+    --modal-background: var(--kings-bg-1);
+    --modal-footer-background: var(--kings-bg-1);
 }
 
 /* Kill Midnight's neutral fallback surfaces */
@@ -320,7 +322,7 @@
     background:
         linear-gradient(180deg, rgba(239, 207, 114, 0.03), transparent 18%),
         linear-gradient(0deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)),
-        var(--background-primary) !important;
+        var(--background-secondary) !important;
     box-shadow: inset 0 0 0 1px var(--kings-border);
 }
 
@@ -333,7 +335,7 @@
 }
 
 .panels_c48ade {
-    background: linear-gradient(180deg, rgba(239, 207, 114, 0.06), transparent), #1d150c !important;
+    background: linear-gradient(180deg, rgba(239, 207, 114, 0.06), transparent), var(--background-secondary) !important;
     border-top: 1px solid var(--kings-border);
 }
 
@@ -359,6 +361,37 @@
     color: var(--kings-fg-0) !important;
 }
 
+/* Channel list state colors */
+a[data-list-item-id^="channels___"]:not([class*="modeUnread"]):not([aria-selected="true"]) [class*="name"],
+a[data-list-item-id^="channels___"]:not([class*="modeUnread"]):not([aria-selected="true"]) [class*="name"] *,
+li[class*="containerDefault"]:not([class*="modeUnread"]):not([class*="selected"]):not([class*="modeSelected"]) [class*="name"],
+li[class*="containerDefault"]:not([class*="modeUnread"]):not([class*="selected"]):not([class*="modeSelected"]) [class*="name"] * {
+    color: var(--channels-default) !important;
+}
+
+a[data-list-item-id^="channels___"]:not([class*="modeUnread"]):not([aria-selected="true"]) [class*="icon"],
+a[data-list-item-id^="channels___"]:not([class*="modeUnread"]):not([aria-selected="true"]) [class*="icon"] *,
+li[class*="containerDefault"]:not([class*="modeUnread"]):not([class*="selected"]):not([class*="modeSelected"]) [class*="icon"],
+li[class*="containerDefault"]:not([class*="modeUnread"]):not([class*="selected"]):not([class*="modeSelected"]) [class*="icon"] * {
+    color: var(--channels-default-muted) !important;
+}
+
+#channels [class*="modeUnread"] [class*="name__"],
+a[data-list-item-id^="channels___"][class*="modeUnread"] [class*="name"],
+a[data-list-item-id^="channels___"][class*="modeUnread"] [class*="name"] *,
+li[class*="containerDefault"][class*="modeUnread"] [class*="name"],
+li[class*="containerDefault"][class*="modeUnread"] [class*="name"] * {
+    color: var(--channels-default-unread) !important;
+}
+
+a[data-list-item-id^="channels___"][class*="modeUnread"] svg,
+a[data-list-item-id^="channels___"][class*="modeUnread"] svg path,
+[class*="modeUnread"] [class*="icon__"],
+[class*="modeUnread"] [class*="icon__"] path {
+    color: var(--channels-default-unread) !important;
+    fill: var(--channels-default-unread) !important;
+}
+
 /* Chat and message surfaces */
 .form_f75fb0,
 .channelTextArea_f75fb0,
@@ -371,7 +404,7 @@
 }
 
 .scrollableContainer__74017 {
-    background: linear-gradient(180deg, rgba(239, 207, 114, 0.04), transparent), #1d150c !important;
+    background: linear-gradient(180deg, rgba(239, 207, 114, 0.04), transparent), var(--background-secondary) !important;
     box-shadow: inset 0 0 0 1px var(--kings-border-strong);
 }
 
@@ -425,7 +458,7 @@ button,
 .input__0f084,
 .input_f8bc55,
 .searchBar__35e86 {
-    background: #1b140b !important;
+    background: var(--background-secondary) !important;
     border: 1px solid var(--kings-border) !important;
 }
 
@@ -458,7 +491,7 @@ button,
 .userProfileOuterUnthemed_c69a7b {
     background:
         linear-gradient(180deg, rgba(239, 207, 114, 0.05), transparent 20%),
-        var(--kings-overlay) !important;
+        var(--background-secondary) !important;
     border: 1px solid var(--kings-border-strong);
     box-shadow: 0 18px 40px var(--kings-shadow);
 }
@@ -469,7 +502,6 @@ button,
     [class*="settingCard"],
     [class*="accountProfileCard"],
     [class*="profileCard"],
-    [class*="popout"],
     [class*="modal"],
     [class*="innerContainer"],
     [class*="resultsGroup"],
@@ -492,26 +524,56 @@ button,
     [class*="emptyCard"],
     [class*="prompt"]
 ) {
-    background: linear-gradient(180deg, rgba(239, 207, 114, 0.04), transparent 22%), #21180e !important;
+    background: linear-gradient(180deg, rgba(239, 207, 114, 0.04), transparent 22%), var(--background-secondary) !important;
     border: 1px solid var(--kings-border) !important;
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
 :is(
-    [class*="popout"],
     [class*="modal"],
-    [class*="uploadModal"],
-    [class*="layerContainer"] > div
+    [class*="uploadModal"]
 ) {
     background:
         linear-gradient(180deg, rgba(239, 207, 114, 0.05), transparent 20%),
-        var(--kings-overlay) !important;
+        var(--background-secondary) !important;
     border: 1px solid var(--kings-border-strong);
+}
+
+:is(
+    [class*="tooltip"],
+    [class*="tooltip"] *,
+    [role="tooltip"],
+    [role="tooltip"] *
+) {
+    box-shadow: none !important;
+    backdrop-filter: none !important;
 }
 
 .footer__49fc1,
 .menu_c1e9c4::before {
     background: transparent !important;
+}
+
+/* Text accents */
+:is(
+    [class*="message"] [class*="username"],
+    [class*="username_"],
+    [class*="userTagUsername"],
+    [class*="nameTag"] [class*="username"],
+    [class*="reply"] [class*="username"],
+    [class*="replied"] [class*="username"]
+) {
+    color: var(--purple-2) !important;
+}
+
+:is(
+    [class*="message"] [class*="username"]:hover,
+    [class*="username_"]:hover,
+    [class*="userTagUsername"]:hover,
+    [class*="reply"] [class*="username"]:hover,
+    [class*="replied"] [class*="username"]:hover
+) {
+    color: var(--purple-1) !important;
 }
 
 /* Member list and profile accents */

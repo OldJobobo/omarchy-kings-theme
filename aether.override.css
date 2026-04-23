@@ -81,13 +81,13 @@
 @define-color sidebar_backdrop_color @background;
 @define-color sidebar_shade_color @background;
 
-@define-color headerbar_bg_color alpha(@foreground, 0.05);
+@define-color headerbar_bg_color @background;
 @define-color headerbar_fg_color @foreground;
 @define-color headerbar_backdrop_color @background;
 @define-color headerbar_shade_color @background;
 @define-color headerbar_border_color alpha(@foreground, 0.15);
 
-@define-color card_bg_color alpha(@foreground, 0.03);
+@define-color card_bg_color @background;
 @define-color card_fg_color @foreground;
 @define-color card_shade_color @background;
 
@@ -124,10 +124,10 @@
 @define-color menu_bg_color @background;
 @define-color menu_fg_color @foreground;
 
-@define-color entry_bg_color alpha(@foreground, 0.03);
+@define-color entry_bg_color @background;
 @define-color entry_fg_color @foreground;
 
-@define-color button_bg_color alpha(@foreground, 0.05);
+@define-color button_bg_color @background;
 @define-color button_fg_color @foreground;
 
 @define-color tooltip_bg_color @background;

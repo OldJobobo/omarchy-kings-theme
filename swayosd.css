@@ -21,10 +21,82 @@
 /*                                                                        */
 
 @define-color background-color #261e12;
+@define-color surface-color #312617;
+@define-color surface-top #3b2e1b;
+@define-color edge-color #564a38;
 @define-color border-color #c8a03c;
-@define-color label #d9c27a;
-@define-color image #d9c27a;
-@define-color progress #c8a03c;
+@define-color label #7550a3;
+@define-color image #7550a3;
+@define-color progress #efcf72;
+@define-color progress-core #c8a03c;
+@define-color progress-track #564a38;
+@define-color rail-color #7550a3;
+@define-color shadow-color rgba(7, 4, 1, 0.58);
+
+window:not(:backdrop),
+window:backdrop {
+    border: none;
+    border-width: 0;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 14px;
+}
+
+window:not(:backdrop) #container,
+window:backdrop #container {
+    min-width: 320px;
+    border: 1px solid alpha(@border-color, 0.72);
+    border-left: 4px solid alpha(@rail-color, 0.96);
+    border-right: 4px solid alpha(@rail-color, 0.96);
+    border-radius: 0;
+    background:
+        linear-gradient(180deg, alpha(@surface-top, 0.36), transparent 34%),
+        linear-gradient(90deg, alpha(@progress, 0.06), transparent 26%),
+        linear-gradient(180deg, alpha(@surface-color, 0.98), alpha(@background-color, 0.96));
+    padding: 20px 18px;
+    background-clip: padding-box;
+    box-shadow:
+        0 18px 34px @shadow-color,
+        inset 0 1px 0 rgba(255, 243, 200, 0.04),
+        inset 1px 0 0 rgba(255, 243, 200, 0.03);
+}
+
+image {
+    color: @image;
+    -gtk-icon-size: 28px;
+    margin-right: 12px;
+}
+
+label {
+    color: @label;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+progressbar,
+trough {
+    min-height: 8px;
+    border-radius: 0;
+}
+
+trough {
+    min-height: 8px;
+    background-image: linear-gradient(180deg, alpha(@edge-color, 0.46), alpha(@progress-track, 0.72));
+    border: 1px solid alpha(@border-color, 0.32);
+    box-shadow: inset 0 1px 0 rgba(255, 243, 200, 0.04);
+}
+
+progress {
+    min-height: 8px;
+    border-radius: 0;
+    background-image: linear-gradient(90deg, @progress-core, @progress 62%, #fff0b3);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 248, 219, 0.14),
+        0 0 12px rgba(200, 160, 60, 0.12);
+}
 
 /*               .;                           */
 /*    .;;.    .-.;'     .'                    */
