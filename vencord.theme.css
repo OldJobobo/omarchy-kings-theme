@@ -63,11 +63,11 @@
     --divider-thickness: 1px;
     --corner-text: "Kings";
     --corner-display: none;
-    --animations: on;
-    --list-item-transition: 120ms ease;
+    --animations: off;
+    --list-item-transition: none;
     --dms-icon-svg-transition: 0.4s ease;
     --border-hover-transition: 0.2s ease;
-    --unread-bar-transition: 120ms ease;
+    --unread-bar-transition: none;
     --border-thickness: 1px;
     --top-bar-height: var(--gap);
     --top-bar-button-position: titlebar;
@@ -314,7 +314,6 @@
     .scrollableContainer__74017,
     .attachment_b52bef,
     .embedFull__623de,
-    .message__5126c,
     .wrapper_f7ecac,
     button,
     .button__201d5,
@@ -456,18 +455,14 @@ a[data-list-item-id^="channels___"][class*="modeUnread"] svg path,
     box-shadow: none !important;
 }
 
-.message__5126c {
-    border-left: 1px solid transparent;
-}
-
 .message__5126c:hover {
     background: var(--background-message-hover) !important;
-    border-left-color: var(--kings-border);
+    box-shadow: inset 1px 0 0 var(--kings-border);
 }
 
 .mentioned__5126c {
     background: var(--background-mentioned) !important;
-    border-left-color: var(--kings-accent) !important;
+    box-shadow: inset 1px 0 0 var(--kings-accent) !important;
 }
 
 .separator__5126c {
