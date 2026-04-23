@@ -1,20 +1,20 @@
 # Omarchy Kings Theme
 
-Kings is a dark court theme built around lacquered brown, old gold, parchment, and a measured spread of jewel-tone accents. It keeps the desktop moody and ceremonial without turning the whole shell into costume drama: warm shadows, gilded highlights, and just enough color separation to keep terminals and UI states legible.
+Kings is a dark courtly theme wrought from a chosen host of Crusader Kings III splashscreens, and arrayed in lacquered brown, old gold, parchment, and a measured scattering of jewel-toned accents. It keeps the desktop solemn, regal, and candlelit without sinking into mere pageantry: warm shadows, gilded gleams, and just enough color division to keep terminals and sundry UI states clear to the eye.
 
-## Preview
+## Beholding
 
 ![Omarchy Kings preview](preview.png)
 
-## Install
+## Installation
 
-Use the Omarchy theme installer:
+To set it upon thy system, use the Omarchy theme installer:
 
 ```bash
 omarchy-theme-install https://github.com/oldjobobo/omarchy-kings-theme
 ```
 
-## Wallpapers
+## Tapestries
 
 <table>
   <tr>
