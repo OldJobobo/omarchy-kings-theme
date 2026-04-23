@@ -287,7 +287,7 @@
     background-color: var(--kings-bg-0) !important;
 }
 
-/* Major geometry and material pass */
+/* Major geometry and Carbon surface pass */
 :is(
     .appMount__51fd7,
     .bg__960e4,
@@ -303,7 +303,51 @@
     .scroller__36d07,
     .content__908e2,
     .container__01ae2,
-    .privateChannels__35e86
+    .privateChannels__35e86,
+    .link__2ea32,
+    .interactive_bf202d,
+    .channel__972a0,
+    .layout__20a53,
+    .container__91a9d,
+    .form_f75fb0,
+    .channelTextArea_f75fb0,
+    .scrollableContainer__74017,
+    .attachment_b52bef,
+    .embedFull__623de,
+    .message__5126c,
+    .wrapper_f7ecac,
+    button,
+    .button__201d5,
+    .lookFilled__201d5,
+    .lookOutlined__201d5,
+    .item__58105,
+    .tabBarItem_b9fccc,
+    .newMessagesBar__0f481,
+    .barButtonAlt__0f481,
+    .pill_a2c9e8,
+    .wrapper__1405b,
+    .input__0f084,
+    .input_f8bc55,
+    .menu_c1e9c4,
+    .wrapper__3af0b,
+    .root__49fc1,
+    .footer__49fc1,
+    .small_f9d27c,
+    .medium__9a337,
+    .large__9a337,
+    .container__0f2e8,
+    .messagesPopoutWrap__45690,
+    .userProfileOuterUnthemed_c69a7b,
+    .browser_fc4f04,
+    .memberInner__5d473,
+    .wrapper__6e9f8,
+    .svg_cc5dd2,
+    .childWrapper__6e9f8,
+    .circleIconButton__5bc7e,
+    [class*="reaction"],
+    [class*="reactionMe"],
+    [class*="reactionDefault"],
+    [class*="reactionBtn"]
 ) {
     border-radius: 0 !important;
 }
@@ -343,7 +387,6 @@
 .channel__972a0,
 .layout__20a53,
 .container__91a9d {
-    border-radius: 0 !important;
     border-left: 2px solid transparent;
 }
 
@@ -400,17 +443,6 @@ a[data-list-item-id^="channels___"][class*="modeUnread"] svg path,
     fill: var(--channels-default-unread) !important;
 }
 
-/* Chat and message surfaces */
-.form_f75fb0,
-.channelTextArea_f75fb0,
-.scrollableContainer__74017,
-.attachment_b52bef,
-.embedFull__623de,
-.message__5126c,
-.wrapper_f7ecac {
-    border-radius: 0 !important;
-}
-
 .scrollableContainer__74017 {
     background: var(--background-secondary) !important;
     box-shadow:
@@ -456,22 +488,6 @@ a[data-list-item-id^="channels___"][class*="modeUnread"] svg path,
     opacity: 1 !important;
 }
 
-/* Buttons, pills, inputs */
-button,
-.button__201d5,
-.lookFilled__201d5,
-.lookOutlined__201d5,
-.item__58105,
-.tabBarItem_b9fccc,
-.newMessagesBar__0f481,
-.barButtonAlt__0f481,
-.pill_a2c9e8,
-.wrapper__1405b,
-.input__0f084,
-.input_f8bc55 {
-    border-radius: 0 !important;
-}
-
 .lookFilled__201d5.colorBrand__201d5,
 .button__201d5[color="brand"] {
     background: var(--kings-accent) !important;
@@ -509,21 +525,6 @@ button,
     box-shadow: inset 0 -2px 0 var(--kings-accent);
 }
 
-/* Popouts, modals, menus */
-.menu_c1e9c4,
-.wrapper__3af0b,
-.root__49fc1,
-.footer__49fc1,
-.small_f9d27c,
-.medium__9a337,
-.large__9a337,
-.container__0f2e8,
-.messagesPopoutWrap__45690,
-.userProfileOuterUnthemed_c69a7b,
-.browser_fc4f04 {
-    border-radius: 0 !important;
-}
-
 .menu_c1e9c4,
 .root__49fc1,
 .container__0f2e8,
@@ -533,7 +534,7 @@ button,
 [class*="popoutContainer"],
 [class*="popoutContent"] {
     background: var(--background-secondary) !important;
-    border: 1px solid var(--kings-border-strong);
+    border: 1px solid var(--kings-border);
     box-shadow:
         inset 0 0 0 1px rgba(0, 0, 0, 0.12),
         0 16px 32px var(--kings-shadow);
@@ -588,7 +589,7 @@ button,
 ) {
     background-color: var(--background-floating) !important;
     background-image: none !important;
-    border: 1px solid var(--kings-border-strong) !important;
+    border: 1px solid var(--kings-border) !important;
     color: var(--text-1) !important;
     opacity: 1 !important;
     box-shadow: 0 8px 20px var(--kings-shadow) !important;
@@ -601,8 +602,10 @@ button,
     [role="tooltip"] [class*="tooltipContent"],
     [role="tooltip"] [class*="content"]
 ) {
-    background-color: var(--background-floating) !important;
+    background-color: transparent !important;
     background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
     color: var(--text-1) !important;
     opacity: 1 !important;
 }
@@ -653,13 +656,6 @@ button,
     color: var(--purple-1) !important;
 }
 
-/* Member list and profile accents */
-.membersGroup_c8ffbb,
-.memberInner__5d473,
-.container__91a9d {
-    border-radius: 0 !important;
-}
-
 .membersGroup_c8ffbb {
     color: var(--kings-accent-bright) !important;
     letter-spacing: 0.08em;
@@ -672,14 +668,6 @@ button,
     box-shadow: none !important;
 }
 
-/* Server rail cleanup */
-.wrapper__6e9f8,
-.svg_cc5dd2,
-.childWrapper__6e9f8,
-.circleIconButton__5bc7e {
-    border-radius: 0 !important;
-}
-
 .selected__91816 .childWrapper__6e9f8,
 .wrapper__6e9f8:hover .childWrapper__6e9f8,
 .circleIconButton__5bc7e:hover {
@@ -689,16 +677,6 @@ button,
 
 .selected__91816 .childWrapper__6e9f8 {
     box-shadow: inset 0 -2px 0 var(--kings-accent) !important;
-}
-
-/* Reactions */
-:is(
-    [class*="reaction"],
-    [class*="reactionMe"],
-    [class*="reactionDefault"],
-    [class*="reactionBtn"]
-) {
-    border-radius: 0 !important;
 }
 
 :is(
@@ -717,6 +695,34 @@ button,
 }
 
 :is(
+    [class*="reactionInner"],
+    [class*="reactionInner"] > *,
+    [class*="reactionCount"],
+    [class*="reactionCount"] > *,
+    [class*="reactionBadge"],
+    [class*="reactionBadge"] > *,
+    [class*="reactionBtn"],
+    [class*="reactionBtn"] > *,
+    [class*="reactionBtn"] svg,
+    [class*="reactionBtn"] path
+) {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+    background-image: none !important;
+}
+
+:is(
+    [class*="reactionBtn"]:hover,
+    [class*="reactionBtn"][class*="forceShow"]
+) {
+    background: rgba(243, 230, 191, 0.05) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+:is(
     [class*="reactionMe"],
     [class*="reaction"][aria-pressed="true"],
     [class*="reaction"][class*="selected"]
@@ -726,21 +732,62 @@ button,
     box-shadow: inset 0 -1px 0 var(--kings-accent) !important;
 }
 
-/* Reaction hover popup — flat elevated surface, zero borders, elevation via bg step only */
-[class*="reactionTooltip"],
-[class*="reactionTooltip"] * {
+/* Reaction/add-reaction hover popups: one outer surface, flat inner content */
+:is(
+    [class*="reactionTooltip"],
+    [class*="reactionTooltip"] *,
+    [class*="tooltip"] [class*="reaction"],
+    [class*="tooltip"] [class*="reaction"] *,
+    [class*="emojiPicker"] [class*="wrapper"],
+    [class*="emojiPicker"] [class*="container"],
+    [class*="emojiPicker"] [class*="header"],
+    [class*="emojiPicker"] [class*="content"],
+    [class*="emojiPicker"] [class*="scroller"],
+    [class*="emojiPicker"] [class*="list"],
+    [class*="emojiPicker"] [class*="category"],
+    [class*="emojiPicker"] [class*="section"],
+    [class*="emojiSection"],
+    [class*="emojiSection"] *,
+    [class*="reactionPopout"],
+    [class*="reactionPopout"] *,
+    [class*="reactionsPopout"],
+    [class*="reactionsPopout"] *
+) {
     border: none !important;
     box-shadow: none !important;
     backdrop-filter: none !important;
     background-image: none !important;
 }
 
-[class*="reactionTooltip"] {
-    background: var(--kings-bg-2) !important;
+:is(
+    [class*="reactionTooltip"],
+    [class*="emojiPicker"],
+    [class*="emojiSection"],
+    [class*="reactionPopout"],
+    [class*="reactionsPopout"]
+) {
+    background-color: var(--kings-bg-2) !important;
+    color: var(--text-1) !important;
+    opacity: 1 !important;
 }
 
-[class*="reactionTooltip"] > * {
-    background: transparent !important;
+:is(
+    [class*="reactionTooltip"] > *,
+    [class*="tooltip"] [class*="reaction"],
+    [class*="tooltip"] [class*="reaction"] *,
+    [class*="emojiPicker"] [class*="wrapper"],
+    [class*="emojiPicker"] [class*="container"],
+    [class*="emojiPicker"] [class*="header"],
+    [class*="emojiPicker"] [class*="content"],
+    [class*="emojiPicker"] [class*="scroller"],
+    [class*="emojiPicker"] [class*="list"],
+    [class*="emojiPicker"] [class*="category"],
+    [class*="emojiPicker"] [class*="section"],
+    [class*="emojiSection"] > *,
+    [class*="reactionPopout"] > *,
+    [class*="reactionsPopout"] > *
+) {
+    background-color: transparent !important;
 }
 
 /* Small coherence tweaks */
