@@ -38,3 +38,9 @@ omarchy-theme-install https://github.com/oldjobobo/omarchy-kings-theme
     <td><img src="backgrounds/12-tournament.jpg" width="220" alt="Tournament"></td>
   </tr>
 </table>
+
+## Attribution
+
+This theme's wallpapers are derived from Crusader Kings III splashscreen artwork by Paradox Interactive and its contributors.
+
+The Kings theme itself covers the Omarchy palette, theme files, and release packaging in this repository. Crusader Kings III and its associated artwork remain the property of their respective rights holders.
